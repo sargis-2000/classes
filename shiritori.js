@@ -47,20 +47,13 @@ class Shiritory {
      */
 
     play(word) {
-        if (this.#game_over) return 'game over'
-
         if (this.words.length > 0) {
             const lastWord = this.words[this.words.length - 1]
 
-            if (lastWord[lastWord.length - 1] !== word[0]) {
+            if (lastWord[lastWord.length - 1] !== word[0] || this.words.includes(word)) {
                 this.#game_over = true
                 return 'game over'
             }
-        }
-
-        if (this.words.includes(word)) {
-            this.#game_over = true
-            return 'game over'
         }
 
         this.words.push(word)
