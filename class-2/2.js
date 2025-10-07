@@ -58,7 +58,7 @@ class Account {
     }
 
     toString() {
-        return `${this.name}'s account balance is ${this.balance}`
+        return `${this.name}'s account balance is $${this.balance}`
     }
 }
 
@@ -76,3 +76,4 @@ console.log(cardAcc.balance) // 2000
 const anotherAcc = savingAcc
 console.log(Account.identifyAccounts(savingAcc, anotherAcc)) // true
 console.log(Account.identifyAccounts(savingAcc, cardAcc)) // false
+console.log(savingAcc.toString())
