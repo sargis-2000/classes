@@ -1,10 +1,12 @@
 class Account {
+    static #idCounter = 0
+
     #id
     #name
     #balance
 
-    constructor(id, name, balance) {
-        this.#id = id
+    constructor(name, balance) {
+        this.#id = Account.#idCounter++
         this.#name = name
         this.#balance = balance
     }
@@ -62,15 +64,17 @@ class Account {
     }
 }
 
-const savingAcc = new Account(1, "Saving account", 2000)
-const cardAcc = new Account(2, "Card account", 1000);
+const savingAcc = new Account("Saving account", 2000)
+const cardAcc = new Account("Card account", 1000);
 
+console.log(savingAcc.id) // 0
 console.log(savingAcc.balance) // 2000
 console.log(savingAcc.credit(400)) // 2400
 console.log(savingAcc.balance) // 2400
 console.log(savingAcc.debit(9000)) // Amount exceeded balance
 console.log(savingAcc.transferTo(cardAcc, 1000)); // 1400
 console.log(savingAcc.balance) // 1400
+console.log(cardAcc.id) // 1
 console.log(cardAcc.balance) // 2000
 
 const anotherAcc = savingAcc

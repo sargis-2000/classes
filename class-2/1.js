@@ -36,9 +36,9 @@ class Author {
 
 const author1 = new Author('J. K. Rowling', 'abc@gmail.com', 'fEmale')
 
-console.log(author1.gender); // female
-console.log(author1.name); // J. K. Rowling
-console.log(author1.toString()); // Ms. J. K. Rowling
+console.log(author1.gender) // female
+console.log(author1.name) // J. K. Rowling
+console.log(author1.toString()) // Ms. J. K. Rowling
 
 // author1.name = 12 // throws error: Cannot modify name
 
